@@ -17,9 +17,9 @@ const Gallery: React.FC = () => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % itemData.length);
     }, 5000); // Change image every 5 seconds
-
+  
     return () => clearInterval(interval);
-  }, []);
+  }, [itemData.length]); // Add itemData.length as a dependency  
 
   return (
     <Box id="gallery" sx={{ py: 8 }}>
